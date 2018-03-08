@@ -16,4 +16,9 @@ export class PokemonService {
 	getPokemons (): Observable<Pokemon[]> {
 		return this.http.get<Pokemon[]>(this.pokemonsUrl);
 	}
+
+    getPokemon(slug: string): Observable<Pokemon> {
+		const url = `${this.pokemonsUrl}/${slug}`;
+		return this.http.get<Pokemon>(url);
+	}
 }

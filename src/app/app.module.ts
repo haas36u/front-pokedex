@@ -4,17 +4,21 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
+import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 
 import { PokemonService } from './services/pokemon.service';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		PokemonComponent
+		PokemonComponent,
+		PokemonDetailComponent
 	],
 	imports: [
 		BrowserModule,
-		HttpClientModule
+		HttpClientModule,
+		AppRoutingModule
 	],
 	providers: [
 		PokemonService, 

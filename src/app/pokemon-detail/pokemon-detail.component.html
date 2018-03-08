@@ -1,0 +1,40 @@
+<div class="row">
+	<button (click)="goBack()" class="btn">Retour</button>
+
+    <div class="pokemon_details col s12" *ngIf="pokemon">
+        <h2 class="center pokemon_title">{{pokemon.name}}</h2>
+        <div class="pokemon_detail_container">
+            <div class="col s5 center">
+                <img src="{{pokemon.img}}">
+            </div>
+    
+            <div class="col s6">
+				<p><strong>Level</strong> : {{pokemon.level}}</p>
+                <p><strong>Type</strong></p>
+                <div class="pokemon_type_container">
+                    <span class="badge" [ngStyle]="{'background-color': type.color}" *ngFor="let type of pokemon.types">{{type.name}}</span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col s12 evolutions">
+            <p class="title">Evolutions</p>
+            <div class="col s4 center middle">
+                <div>
+                    <a href="#">
+                        <img src="img/004.png" class="little_img">
+                        Reptince
+                    </a>
+                </div>
+            </div>
+            <div class="col s4 center last">
+                <div>
+                    <a href="#">
+                        <img src="img/004.png" class="little_img">
+                        Dracofeu
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
