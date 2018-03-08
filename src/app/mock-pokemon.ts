@@ -1,14 +1,14 @@
 import { Pokemon } from './models/pokemon';
 
 export const POKEMONS: Pokemon[] = [
-  { id: 11, name: 'Mr. Nice' },
-  { id: 12, name: 'Narco' },
-  { id: 13, name: 'Bombasto' },
-  { id: 14, name: 'Celeritas' },
-  { id: 15, name: 'Magneta' },
-  { id: 16, name: 'RubberMan' },
-  { id: 17, name: 'Dynama' },
-  { id: 18, name: 'Dr IQ' },
-  { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornado' }
+  { id: 1, name: 'Bulbizare',  slug: 'bulbizare', level: 1, img: '../assets/004.png', evolutions: []},
+  { id: 2, name: 'Herbizarre', slug: 'herbizarre', level: 12, img: '../assets/004.png', evolutions: []},
+  { id: 3, name: 'Florizarre', slug: 'florizarre', level: 36, img: '../assets/004.png', evolutions: []},
+  { id: 4, name: 'Salameche',  slug: 'salameche', level: 1, img: '../assets/004.png', evolutions: []},
+  { id: 5, name: 'Reptincel',  slug: 'reptincel', level: 12, img: '../assets/004.png', evolutions: []},
+  { id: 6, name: 'Dracofeu',   slug: 'dracofeu', level: 36, img: '../assets/004.png', evolutions: []},
+  { id: 7, name: 'Carapuce',   slug: 'carapuce', level: 1, img: '../assets/004.png', evolutions: []},
+  { id: 8, name: 'Carabaffe',  slug: 'carabaffe', level: 12, img: '../assets/004.png', evolutions: []},
+  { id: 9, name: 'Tortank',    slug: 'tortank', level: 36,  img: '../assets/004.png', evolutions: []},
+  { id: 10, name: 'Chenipan',  slug: 'chenipan', level: 1, img: '../assets/004.png', evolutions: [] }
 ];
