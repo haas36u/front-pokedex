@@ -1,0 +1,12 @@
+<div class="row">
+    <h3 class="col s12 center">Liste des pokemons</h3>
+    <div class="col s12">
+        <a href="details.html" class="list_pokemon col s2 center" *ngFor="let pokemon of pokemons">
+            <img src="img/004.png">
+            <p class="pokemon_name">{{pokemon.name}}</p>
+            <p class="left">
+                <span class="badge" style="background-color: red;">Feu</span>
+            </p>
+        </a>
+    </div>
+</div>
