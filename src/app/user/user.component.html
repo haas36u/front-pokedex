@@ -1,6 +1,8 @@
 <div class="row">
     <h3 class="col s12 center">Mes pokemons</h3>
-    <div *ngIf="!captures">Aucun pokemon capturé</div>
+    <div *ngIf="!captures" class="center" style="margin-top: 1em;">
+        <p>Vous devez vous connecter pour consulter vos pokemons</p>
+    </div>
     <div class="col s12" *ngIf="captures.length != 0">
         <div class="list_pokemon col s2 center" *ngFor="let capture of captures">
             <a routerLink="/pokemons/{{capture.pokemon.slug}}"><img [src]="capture.pokemon.img"></a>

@@ -38,6 +38,6 @@ export class PokemonDetailComponent implements OnInit {
 	}
 
 	catchPokemon(pokemon: Pokemon): void {
-		this.userService.catchPokemon({pokemon: pokemon.slug, level: pokemon.level}).subscribe(() => console.log('dododo'));;
+		this.userService.catchPokemon({pokemon: pokemon.slug, level: pokemon.level}).subscribe(() => alert('Tu as capturé ' + pokemon.name + ' !'));;
 	}
 }
