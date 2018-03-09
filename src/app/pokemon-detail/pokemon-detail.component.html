@@ -1,7 +1,6 @@
 <div class="row">
-	<button (click)="goBack()" class="btn">Retour</button>
-
-    <div class="pokemon_details col s12" *ngIf="pokemon">
+    <div class="pokemon_details col s12">
+        <button (click)="goBack()" class="btn">Retour</button>        
         <h2 class="center pokemon_title">{{pokemon.name}}</h2>
         <div class="pokemon_detail_container">
             <div class="col s5 center">

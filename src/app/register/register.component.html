@@ -1,0 +1,28 @@
+<div id="register" class="col s12">
+	<form class="col s12">
+		<div class="form-container">
+			<h3 class="col s12 center">Créer un compte</h3>
+			<div class="row">
+			<div class="input-field col s12">
+				<input id="last_name" type="text" class="validate" name="username" [(ngModel)]="user.username">
+				<label for="last_name">Pseudo</label>
+			</div>
+			</div>
+			<div class="row">
+			<div class="input-field col s12">
+				<input id="email" type="email" class="validate" name="email" [(ngModel)]="user.email">
+				<label for="email">Email</label>
+			</div>
+			</div>
+			<div class="row">
+			<div class="input-field col s12">
+				<input id="password" type="password" class="validate" name="password" [(ngModel)]="user.password">
+				<label for="password">Mot de passe</label>
+			</div>
+			</div>
+			<div class="center">
+				<button class="btn waves-effect waves-light teal" type="submit" (click)="register()">S'enregistrer</button>
+			</div>
+		</div>
+	</form>
+</div>

@@ -1,5 +1,7 @@
+.pokemon_details > button {
+  margin-top: 1em; }
 .pokemon_details .pokemon_title {
-  margin: 1.5em 0; }
+  margin: 1em 0; }
 .pokemon_details .pokemon_title span {
   color: #919191; }
 .pokemon_details .pokemon_detail_container {
