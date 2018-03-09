@@ -1,12 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
+
 import 'rxjs/add/operator/map';
 import { User } from '../models/user';
  
 @Injectable()
 export class AuthentificationService {
-	constructor(private http: HttpClient) { }
+	constructor(
+        private http: HttpClient,
+        private router: Router
+    ) { }
 	
 	private url = 'http://localhost:8080';
     private httpOptions = {
@@ -17,18 +22,19 @@ export class AuthentificationService {
 		return this.http.post<User>(this.url + '/register', user, this.httpOptions);
     }
 
-    login (user: User): Observable<User> {
-		return this.http.post<User>(this.url + '/login', user, this.httpOptions)
+    login (user: User): void{
+		this.http.post<User>(this.url + '/login', user, this.httpOptions)
             .map(user => {
                 if (user && user.token) {
                     localStorage.setItem('currentUserToken', JSON.stringify(user));
                 }
  
-                return user;
+                this.router.navigate(['/']);
             });
     }
  
     logout() {
         localStorage.removeItem('currentUserToken');
+        this.router.navigate(['/pokemons']);
     }
 }

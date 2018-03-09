@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    this.authentificationService.login(this.user).subscribe(() => this.router.navigate(['/toto']));
+    this.authentificationService.login(this.user);
   }
 
 }

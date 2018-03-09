@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthentificationService } from './services/authentification.service';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,15 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
 
+  constructor(
+    private authentificationService: AuthentificationService
+  ) { }
 
   public getUserToken(): string {
     return localStorage.getItem('currentUserToken');
+  }
+
+  logout(): void {
+    this.authentificationService.logout();
   }
 }

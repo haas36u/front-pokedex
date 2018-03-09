@@ -15,8 +15,9 @@
                 <div class="nav-wrapper">
                     <a routerLink="/pokemons" class="brand-logo"><img src="../assets/logo.png"></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a routerLink="/register">Créer un compte</a></li>
-                        <li><a routerLink="/login">Connexion</a></li>
+                        <li *ngIf="!getUserToken()"><a routerLink="/register">Créer un compte</a></li>
+                        <li *ngIf="!getUserToken()"><a routerLink="/login">Connexion</a></li>
+                        <li *ngIf="getUserToken()"><a (click)="logout()">Déconnexion</a></li>
                     </ul>
                 </div>
             </nav>
