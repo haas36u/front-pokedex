@@ -17,6 +17,7 @@
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li *ngIf="!getUserToken()"><a routerLink="/register">Créer un compte</a></li>
                         <li *ngIf="!getUserToken()"><a routerLink="/login">Connexion</a></li>
+                        <li *ngIf="getUserToken()"><a routerLink="/user-pokemons">Mes pokemons</a></li>
                         <li *ngIf="getUserToken()"><a (click)="logout()">Déconnexion</a></li>
                     </ul>
                 </div>

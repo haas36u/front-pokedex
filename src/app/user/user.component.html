@@ -1,3 +1,13 @@
-<p>
-  user works!
-</p>
+<div class="row">
+    <h3 class="col s12 center">Mes pokemons</h3>
+    <div *ngIf="!captures">Aucun pokemon capturé</div>
+    <div class="col s12" *ngIf="captures.length != 0">
+        <div class="list_pokemon col s2 center" *ngFor="let capture of captures">
+            <a routerLink="/pokemons/{{capture.pokemon.slug}}"><img [src]="capture.pokemon.img"></a>
+            <a routerLink="/pokemons/{{capture.pokemon.slug}}"><p class="pokemon_name">{{capture.pokemon.name}}</p></a>
+            <p>Level : {{capture.level}}</p>
+            <span (click)="fightPokemon(capture)" class="btn">Fight</span>
+            <span (click)="releasePokemon(capture)" class="btn red darken-4" style="margin: 0.5em 0;">Relacher</span>
+        </div>
+    </div>
+</div>

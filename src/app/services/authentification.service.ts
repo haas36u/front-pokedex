@@ -22,18 +22,22 @@ export class AuthentificationService {
 		return this.http.post<User>(this.url + '/register', user, this.httpOptions);
     }
 
-    login (user: User): void{
-		this.http.post<User>(this.url + '/login', user, this.httpOptions)
+    login (user: User): Observable<User>{
+        console.log('authent login')
+
+		return this.http.post<User>(this.url + '/login', user, this.httpOptions)
             .map(user => {
                 if (user && user.token) {
-                    localStorage.setItem('currentUserToken', JSON.stringify(user));
+                    localStorage.setItem('currentUser', JSON.stringify(user.username));
+                    localStorage.setItem('currentUserToken', JSON.stringify(user.token));
                 }
  
-                this.router.navigate(['/']);
+                return user;
             });
     }
  
     logout() {
+        localStorage.removeItem('currentUser');
         localStorage.removeItem('currentUserToken');
         this.router.navigate(['/pokemons']);
     }

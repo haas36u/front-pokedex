@@ -2,6 +2,7 @@
     <div class="pokemon_details col s12">
         <button routerLink="/pokemons" class="btn">Retour</button>        
         <h2 class="center pokemon_title">{{pokemon.name}}</h2>
+        <button (click)="catchPokemon(pokemon)" class="btn right">Attraper</button>  
         <div class="pokemon_detail_container">
             <div class="col s5 center">
                 <img src="{{pokemon.img}}">

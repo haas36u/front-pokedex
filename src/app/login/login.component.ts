@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    this.authentificationService.login(this.user);
+    this.authentificationService.login(this.user).subscribe(user => this.router.navigate(['/user-pokemons']));
   }
 
 }

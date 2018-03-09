@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 
 import { AuthentificationService } from './services/authentification.service';
 import { UserComponent } from './user/user.component';
+import { UserService } from './services/user.service';
 
 @NgModule({
 	declarations: [
@@ -33,7 +34,8 @@ import { UserComponent } from './user/user.component';
 	providers: [
 		PokemonService, 
 		HttpClientModule,
-		AuthentificationService
+		AuthentificationService,
+		UserService
 	],
 	bootstrap: [AppComponent]
 })

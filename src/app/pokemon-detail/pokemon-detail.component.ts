@@ -3,6 +3,7 @@ import { Pokemon } from '../models/pokemon';
 import { ActivatedRoute, ActivationEnd } from '@angular/router';
 import { Location } from '@angular/common';
 import { PokemonService } from '../services/pokemon.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-pokemon-detail',
@@ -18,7 +19,8 @@ export class PokemonDetailComponent implements OnInit {
 	constructor(
 		private route: ActivatedRoute,
 		private pokemonService: PokemonService,
-		private location: Location
+		private location: Location,
+		private userService: UserService
 	) { }
 
 	ngOnInit() {
@@ -33,5 +35,9 @@ export class PokemonDetailComponent implements OnInit {
 			this.pokemon.evolutions.push(this.pokemon);
 			pokemon.evolutions.sort((a, b) => a.level - b.level);
 		});
+	}
+
+	catchPokemon(pokemon: Pokemon): void {
+		this.userService.catchPokemon({pokemon: pokemon.slug, level: pokemon.level}).subscribe(() => console.log('dododo'));;
 	}
 }
