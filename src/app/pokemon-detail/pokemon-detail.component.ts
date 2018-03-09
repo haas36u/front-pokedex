@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Pokemon } from '../models/pokemon';
 import { ActivatedRoute, ActivationEnd } from '@angular/router';
 import { Location } from '@angular/common';
@@ -13,6 +13,8 @@ export class PokemonDetailComponent implements OnInit {
 
 	@Input() pokemon : Pokemon;
 
+	private slug = this.route.snapshot.paramMap.get('slug');
+
 	constructor(
 		private route: ActivatedRoute,
 		private pokemonService: PokemonService,
@@ -21,14 +23,15 @@ export class PokemonDetailComponent implements OnInit {
 
 	ngOnInit() {
 		this.getPokemon();
+		this.route.url.subscribe(url => this.getPokemon())
 	}
 
 	getPokemon(): void {
 		const slug = this.route.snapshot.paramMap.get('slug');
-		this.pokemonService.getPokemon(slug).subscribe(pokemon => this.pokemon = pokemon);
-	}
-
-	goBack() : void {
-		this.location.back();
+		this.pokemonService.getPokemon(slug).subscribe(pokemon => {
+			this.pokemon = pokemon;
+			this.pokemon.evolutions.push(this.pokemon);
+			pokemon.evolutions.sort((a, b) => a.level - b.level);
+		});
 	}
 }

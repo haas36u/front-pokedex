@@ -13,6 +13,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 
 import { AuthentificationService } from './services/authentification.service';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
 	declarations: [
@@ -20,7 +21,8 @@ import { AuthentificationService } from './services/authentification.service';
 		PokemonComponent,
 		PokemonDetailComponent,
 		RegisterComponent,
-		LoginComponent
+		LoginComponent,
+		UserComponent
 	],
 	imports: [
 		BrowserModule,

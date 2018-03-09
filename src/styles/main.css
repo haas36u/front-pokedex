@@ -99,7 +99,7 @@ header, footer {
       margin: 0 auto;
       width: 120px;
       height: 120px; }
-    .pokemon_details .evolutions > div:first-child::after, .pokemon_details .evolutions > div:nth-child(2)::after {
+    .pokemon_details .evolutions > div:nth-child(2)::after, .pokemon_details .evolutions > div:nth-child(3)::after {
       content: ">";
       font-size: 300%;
       position: absolute;

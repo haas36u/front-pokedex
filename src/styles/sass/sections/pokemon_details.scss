@@ -67,7 +67,7 @@
                 height: 120px;
             }
 
-            &:first-child::after, &:nth-child(2)::after {
+            &:nth-child(2)::after, &:nth-child(3)::after {
                 content: ">";
                 font-size: 300%;
                 position: absolute;
