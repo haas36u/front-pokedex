@@ -89,22 +89,24 @@ header, footer {
     color: #ffffff;
     font-size: 1.2em;
     text-transform: uppercase; }
-  .pokemon_details .evolutions .first, .pokemon_details .evolutions .middle, .pokemon_details .evolutions .last {
+  .pokemon_details .evolutions > div {
     position: relative; }
-    .pokemon_details .evolutions .first a, .pokemon_details .evolutions .middle a, .pokemon_details .evolutions .last a {
+    .pokemon_details .evolutions > div a {
       color: #ffffff;
       text-decoration: none; }
-    .pokemon_details .evolutions .first img, .pokemon_details .evolutions .middle img, .pokemon_details .evolutions .last img {
+    .pokemon_details .evolutions > div img {
       display: block;
       margin: 0 auto;
       width: 120px;
       height: 120px; }
-  .pokemon_details .evolutions .first::after, .pokemon_details .evolutions .middle::after {
-    content: ">";
-    font-size: 300%;
-    position: absolute;
-    right: 0%;
-    top: 14%;
-    color: #ffffff; }
+    .pokemon_details .evolutions > div:first-child::after, .pokemon_details .evolutions > div:nth-child(2)::after {
+      content: ">";
+      font-size: 300%;
+      position: absolute;
+      right: 0%;
+      top: 14%;
+      color: #ffffff; }
+    .pokemon_details .evolutions > div:last-child::after {
+      content: none; }
 
 /*# sourceMappingURL=main.css.map */

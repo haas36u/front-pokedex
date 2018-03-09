@@ -18,7 +18,6 @@ export class AuthentificationService {
     }
 
     login (user: User): Observable<User> {
-        console.log(user)
 		return this.http.post<User>(this.url + '/login', user, this.httpOptions)
             .map(user => {
                 if (user && user.token) {

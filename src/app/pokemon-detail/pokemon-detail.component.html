@@ -18,19 +18,11 @@
     
         <div class="col s12 evolutions">
             <p class="title">Evolutions</p>
-            <div class="col s4 center middle">
+            <div class="col s4 center" *ngFor="let evolution of pokemon.evolutions">
                 <div>
-                    <a href="#">
-                        <img src="img/004.png" class="little_img">
-                        Reptince
-                    </a>
-                </div>
-            </div>
-            <div class="col s4 center last">
-                <div>
-                    <a href="#">
-                        <img src="img/004.png" class="little_img">
-                        Dracofeu
+                    <a routerLink="/pokemons/{{evolution.slug}}">
+                        <img src="{{evolution.img}}" class="little_img">
+                        {{evolution.name}}
                     </a>
                 </div>
             </div>
